@@ -1,31 +1,33 @@
 package easternbloc.balkanhack;
 
-import easternbloc.balkanhack.core.settings.SettingTypes.StringSetting;
+import easternbloc.balkanhack.core.Config;
+import easternbloc.balkanhack.core.settings.Setting;
+import easternbloc.balkanhack.core.settings.SettingManager;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.function.Consumer;
-
 public class BalkanHack implements ModInitializer {
+	public static final String MOD_ID = "balkan-hack";
+	public static BalkanHack INSTANCE;
+	public static MinecraftClient mc;
+
 	public static final Logger LOGGER = LoggerFactory.getLogger("balkanhack");
 
-	Consumer<String> b;
+	public static final SettingManager setting_manager = new SettingManager();
 
 	@Override
-	public void onInitialize() {
+	public void onInitialize () {
+		if (INSTANCE == null) {
+			INSTANCE = this;
+		}
+
+		mc = MinecraftClient.getInstance();
+
 		LOGGER.info("\n\n██████╗  █████╗ ██╗     ██╗  ██╗ █████╗ ███╗   ██╗    ██╗  ██╗ █████╗  ██████╗██╗  ██╗\n██╔══██╗██╔══██╗██║     ██║ ██╔╝██╔══██╗████╗  ██║    ██║  ██║██╔══██╗██╔════╝██║ ██╔╝\n██████╔╝███████║██║     █████╔╝ ███████║██╔██╗ ██║    ███████║███████║██║     █████╔╝ \n██╔══██╗██╔══██║██║     ██╔═██╗ ██╔══██║██║╚██╗██║    ██╔══██║██╔══██║██║     ██╔═██╗ \n██████╔╝██║  ██║███████╗██║  ██╗██║  ██║██║ ╚████║    ██║  ██║██║  ██║╚██████╗██║  ██╗\n╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝\n\n");
 
-		b = a -> System.out.println(a);
-
-		StringSetting idk = new StringSetting(
-				"bruh",
-				"Does Nothing",
-				"idk bro",
-				b
-		);
-
-		idk.setValue("EHHHH?");
+		Config.init();
 	}
 }

@@ -1,5 +1,6 @@
 package easternbloc.balkanhack;
 
+import easternbloc.balkanhack.core.settings.SettingTypes.BooleanSetting;
 import easternbloc.balkanhack.core.settings.SettingTypes.DoubleSetting;
 import net.fabricmc.api.ModInitializer;
 
@@ -11,7 +12,7 @@ import java.util.function.Consumer;
 public class BalkanHack implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("balkanhack");
 
-	Consumer<Double> b;
+	Consumer<Boolean> b;
 
 	@Override
 	public void onInitialize() {
@@ -19,17 +20,14 @@ public class BalkanHack implements ModInitializer {
 
 		b = a -> System.out.println(a);
 
-		DoubleSetting idk = new DoubleSetting(
+		BooleanSetting idk = new BooleanSetting(
 				"bruh",
 				"Does Nothing",
-				5.1,
-				b,
-				1.1,
-				10.1,
-				.5
+				false,
+				b
 		);
 
-		idk.setValue(7.3);
-		idk.increment();
+		idk.toggle();
+		idk.resetValue();
 	}
 }

@@ -37,11 +37,10 @@ public abstract class Setting <T> {
             value = p_value;
         }
         update();
-        // should i only call this if value is valid.. idk
     }
 
     public void resetValue () {
-        setValue(value);
+        setValue(default_value);
     }
 
     private void update() {

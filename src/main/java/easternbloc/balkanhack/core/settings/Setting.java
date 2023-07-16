@@ -43,7 +43,7 @@ public abstract class Setting <T> {
         setValue(default_value);
     }
 
-    private void update() {
+    public void update() {
         if (onUpdate != null) {
             onUpdate.accept(value);
         }

@@ -1,5 +1,6 @@
 package easternbloc.balkanhack;
 
+import easternbloc.balkanhack.core.settings.SettingTypes.IntegerSetting;
 import easternbloc.balkanhack.core.settings.SettingTypes.StringSetting;
 import net.fabricmc.api.ModInitializer;
 
@@ -11,7 +12,7 @@ import java.util.function.Consumer;
 public class BalkanHack implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("balkanhack");
 
-	Consumer<String> b;
+	Consumer<Integer> b;
 
 	@Override
 	public void onInitialize() {
@@ -19,13 +20,16 @@ public class BalkanHack implements ModInitializer {
 
 		b = a -> System.out.println(a);
 
-		StringSetting idk = new StringSetting(
+		IntegerSetting idk = new IntegerSetting(
 				"bruh",
 				"Does Nothing",
-				"idk bro",
-				b
+				5,
+				b,
+				1,
+				10
 		);
 
-		idk.setValue("EHHHH?");
+		idk.setValue(7);
+		idk.increment();
 	}
 }

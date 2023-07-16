@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 public class StringSetting extends Setting<String> {
 
-    public StringSetting(
+    public StringSetting (
             String p_ID,
             String p_description,
             String p_default_value,

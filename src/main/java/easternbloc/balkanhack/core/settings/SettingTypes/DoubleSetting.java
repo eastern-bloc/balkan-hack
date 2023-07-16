@@ -4,21 +4,20 @@ import easternbloc.balkanhack.core.settings.Setting;
 
 import java.util.function.Consumer;
 
-public class IntegerSetting extends Setting<Integer> {
+public class DoubleSetting extends Setting<Double> {
 
-    private final int min_value;
-    private final int max_value;
-    private final int step;
-    // constant for now..
+    private final double min_value;
+    private final double max_value;
+    private final double step;
 
-    public IntegerSetting (
+    public DoubleSetting(
             String p_ID,
             String p_description,
-            int p_default_value,
-            Consumer<Integer> p_onUpdate,
-            int p_min_value,
-            int p_max_value,
-            int p_step
+            double p_default_value,
+            Consumer<Double> p_onUpdate,
+            double p_min_value,
+            double p_max_value,
+            double p_step
     ) {
         super(p_ID, p_description, p_default_value, p_onUpdate);
         min_value = p_min_value;
@@ -35,7 +34,5 @@ public class IntegerSetting extends Setting<Integer> {
     }
 
     @Override
-    protected boolean isValueValid(Integer value) {
-        return value >= min_value && value <= max_value;
-    }
+    protected boolean isValueValid(Double value) { return value >= min_value && value <= max_value; }
 }

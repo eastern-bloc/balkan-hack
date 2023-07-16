@@ -43,11 +43,11 @@ public abstract class Setting <T> {
         setValue(default_value);
     }
 
-    public void update() {
+    public void update () {
         if (onUpdate != null) {
             onUpdate.accept(value);
         }
     }
 
-    protected abstract boolean isValueValid(T value);
+    protected abstract boolean isValueValid (T value);
 }

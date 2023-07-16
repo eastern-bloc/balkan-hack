@@ -38,7 +38,7 @@ public class StringListSetting extends Setting<List<String>> {
     }
 
     @Override
-    protected boolean isValueValid(List<String> value) {
+    protected boolean isValueValid (List<String> value) {
         return true;
     }
 }

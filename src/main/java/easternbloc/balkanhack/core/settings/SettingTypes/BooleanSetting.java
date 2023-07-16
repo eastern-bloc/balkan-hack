@@ -20,7 +20,5 @@ public class BooleanSetting extends Setting<Boolean> {
     }
 
     @Override
-    protected boolean isValueValid(Boolean value) {
-        return true;
-    }
+    protected boolean isValueValid (Boolean value) { return true; }
 }

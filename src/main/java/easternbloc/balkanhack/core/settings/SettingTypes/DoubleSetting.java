@@ -34,5 +34,5 @@ public class DoubleSetting extends Setting<Double> {
     }
 
     @Override
-    protected boolean isValueValid(Double value) { return value >= min_value && value <= max_value; }
+    protected boolean isValueValid (Double value) { return value >= min_value && value <= max_value; }
 }

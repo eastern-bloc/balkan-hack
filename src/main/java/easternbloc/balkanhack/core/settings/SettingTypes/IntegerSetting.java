@@ -35,7 +35,7 @@ public class IntegerSetting extends Setting<Integer> {
     }
 
     @Override
-    protected boolean isValueValid(Integer value) {
+    protected boolean isValueValid (Integer value) {
         return value >= min_value && value <= max_value;
     }
 }

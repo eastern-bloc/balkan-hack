@@ -30,4 +30,10 @@ public class BalkanHack implements ModInitializer {
 
 		Config.init();
 	}
+
+	public void tick() {
+		if (mc.world != null) {
+			// in game..
+		}
+	}
 }

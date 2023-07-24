@@ -1,6 +1,6 @@
 package easternbloc.balkanhack.core.settings;
 
-import easternbloc.balkanhack.core.utils.Utils;
+import easternbloc.balkanhack.core.utils.TextUtils;
 
 import java.util.function.Consumer;
 
@@ -21,7 +21,7 @@ public abstract class Setting <T> {
             Consumer<T> p_onUpdate
     ) {
         ID = p_ID;
-        name = Utils.IDToName(p_ID);
+        name = TextUtils.IDToName(p_ID);
         description = p_description;
         default_value = p_default_value;
         onUpdate = p_onUpdate;

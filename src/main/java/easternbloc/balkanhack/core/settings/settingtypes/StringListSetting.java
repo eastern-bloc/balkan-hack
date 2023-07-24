@@ -1,4 +1,4 @@
-package easternbloc.balkanhack.core.settings.SettingTypes;
+package easternbloc.balkanhack.core.settings.settingtypes;
 
 import easternbloc.balkanhack.core.settings.Setting;
 

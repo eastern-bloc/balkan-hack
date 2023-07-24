@@ -2,11 +2,9 @@ package easternbloc.balkanhack.core;
 
 import easternbloc.balkanhack.BalkanHack;
 import easternbloc.balkanhack.core.settings.SettingManager;
-import easternbloc.balkanhack.core.settings.SettingTypes.StringListSetting;
+import easternbloc.balkanhack.core.settings.settingtypes.StringListSetting;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.function.Consumer;
 
 public class Config {
 

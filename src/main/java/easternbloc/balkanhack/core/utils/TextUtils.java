@@ -3,9 +3,9 @@ package easternbloc.balkanhack.core.utils;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Utils {
+public class TextUtils {
     public static String IDToName (String p_ID) {
-        return Arrays.stream(p_ID.split("_")).map(Utils::Capitalize).collect(Collectors.joining(" "));
+        return Arrays.stream(p_ID.split("_")).map(TextUtils::Capitalize).collect(Collectors.joining(" "));
     }
 
     public static String Capitalize (String p_str) {

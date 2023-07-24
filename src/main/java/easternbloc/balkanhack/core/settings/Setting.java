@@ -33,7 +33,7 @@ public abstract class Setting <T> {
     }
 
     public void setValue (T p_value) {
-        if (isValueValid(value)) {
+        if (isValueValid(p_value)) {
             value = p_value;
         }
         update();
